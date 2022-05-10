@@ -1,0 +1,84 @@
+body{
+  background-color: black;
+
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#app{
+  width: 100%;
+  text-align: center;
+}
+
+#app .button{
+  display: inline-block;
+}
+
+#app div a{
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: white;
+  line-height: 45px;
+  text-decoration: none;
+  color: black;
+}
+
+#app div a:active{
+  background-color: blue;
+}
+
+main{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background-color: white;
+}
+
+main .cell{
+  width: calc(100% / 3 - 2px);
+  height: calc(100% / 3 - 2px);
+  float: left;
+  border: 1px solid black;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.cell.circle::after{
+  content: '';
+  display: block;
+  height: 90%;
+  width: 90%;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.cell.cross::after{
+  content: '';
+  display: block;
+  height: 10px;
+  width: 90%;
+  background-color: black;
+  transform: rotate(40deg);
+}
+
+.cell.cross::before{
+  content: '';
+  display: block;
+  position: absolute;
+  height: 10px;
+  width: 90%;
+  background-color: black;
+  transform: rotate(140deg);
+}
